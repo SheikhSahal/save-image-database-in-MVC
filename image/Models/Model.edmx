@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MastplayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Movies_detail">
+          <Key>
+            <PropertyRef Name="md_id" />
+          </Key>
+          <Property Name="md_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="m_title_name" Type="varchar" MaxLength="100" />
+          <Property Name="Category_id" Type="varchar" MaxLength="100" />
+          <Property Name="Category_type_id" Type="varchar" MaxLength="100" />
+          <Property Name="version_id" Type="varchar" MaxLength="20" />
+          <Property Name="image_path" Type="varchar" MaxLength="500" />
+          <Property Name="year" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="MastplayModelStoreContainer">
+          <EntitySet Name="Movies_detail" EntityType="Self.Movies_detail" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MastplayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Movies_detail">
+          <Key>
+            <PropertyRef Name="md_id" />
+          </Key>
+          <Property Name="md_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="m_title_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Category_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Category_type_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="version_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="image_path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="year" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="MastplayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movies_detail" EntityType="Self.Movies_detail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MastplayModelStoreContainer" CdmEntityContainer="MastplayEntities">
+          <EntitySetMapping Name="Movies_detail">
+            <EntityTypeMapping TypeName="MastplayModel.Movies_detail">
+              <MappingFragment StoreEntitySet="Movies_detail">
+                <ScalarProperty Name="md_id" ColumnName="md_id" />
+                <ScalarProperty Name="m_title_name" ColumnName="m_title_name" />
+                <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+                <ScalarProperty Name="Category_type_id" ColumnName="Category_type_id" />
+                <ScalarProperty Name="version_id" ColumnName="version_id" />
+                <ScalarProperty Name="image_path" ColumnName="image_path" />
+                <ScalarProperty Name="year" ColumnName="year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

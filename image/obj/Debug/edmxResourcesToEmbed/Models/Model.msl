@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MastplayModelStoreContainer" CdmEntityContainer="MastplayEntities">
+    <EntitySetMapping Name="Movies_detail">
+      <EntityTypeMapping TypeName="MastplayModel.Movies_detail">
+        <MappingFragment StoreEntitySet="Movies_detail">
+          <ScalarProperty Name="md_id" ColumnName="md_id" />
+          <ScalarProperty Name="m_title_name" ColumnName="m_title_name" />
+          <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+          <ScalarProperty Name="Category_type_id" ColumnName="Category_type_id" />
+          <ScalarProperty Name="version_id" ColumnName="version_id" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
